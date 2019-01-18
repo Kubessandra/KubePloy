@@ -24,7 +24,7 @@ Commands:
 ## Example
 
 ```
-kubeploy update-image gcr.io/test-test server_image . && kubeploy server_app gcr.io/test-test server_image
+kubeploy update-image gcr.io/test-test server_image . && kubeploy deploy server_app gcr.io/test-test server_image
 ```
 
 Is the same as
