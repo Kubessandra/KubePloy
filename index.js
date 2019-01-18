@@ -7,7 +7,7 @@ const updateImage = require('./update_image');
 program
   .command('deploy <deployment> <registry> <image>')
   .description(
-    'Deploy your image to the deployment in your cluster and update it',
+    'Deploy your image updated to the deployment in your cluster and update it',
   )
   .action(deploy);
 

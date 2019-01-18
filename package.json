@@ -6,6 +6,9 @@
   "scripts": {
     "eslint": "eslint --max-warnings 0 --fix --ext .js ."
   },
+  "bin": {
+    "kubeploy": "./index.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com:Insomniiak/KubePloy.git"
