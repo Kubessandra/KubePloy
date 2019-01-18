@@ -63,6 +63,9 @@
     "pods",
     "deploy",
     "docker",
-    "image"
+    "image",
+    "microservice",
+    "container",
+    "orchestration"
   ]
 }
