@@ -14,11 +14,11 @@ npm i -g kubeploy
 Usage:  [options] [command]
 
 Options:
-  -h, --help                              output usage information
+  -h, --help                                        output usage information
 
 Commands:
-  deploy <deployment> <registry> <image>  Deploy your image to the deployment in your cluster and update it
-  update-image <registry> <image> <path>  Update and push your image to your registry
+  deploy <deployment> <registry> <image>            Deploy your image updated to the deployment in your cluster and update it
+  update-image [options] <registry> <image> <path>  Update and push your image to your registry
 ```
 
 ## Example
