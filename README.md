@@ -9,6 +9,11 @@ CLI tool to update your images on your deployments
 npm i -g kubeploy
 ```
 
+## Dependency
+
+- Docker
+- Kubectl(need to be configured for your cluster)
+
 ## Help
 ```
 Usage:  [options] [command]
@@ -32,3 +37,5 @@ Is the same as
 ```
 kubeploy update-image gcr.io/test-test server_image . -d server_app
 ```
+
+Update your image push it on your registry and update the deployment on your kubernetes cluster.
