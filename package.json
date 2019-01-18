@@ -51,5 +51,14 @@
     "hooks": {
       "pre-commit": "lint-staged"
     }
-  }
+  },
+  "keywords": [
+    "kubernetes",
+    "kubeploy",
+    "deployment",
+    "pods",
+    "deploy", 
+    "docker",
+    "image"
+  ]
 }
