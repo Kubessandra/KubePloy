@@ -14,7 +14,7 @@
     "url": "git+ssh://git@github.com:Insomniiak/KubePloy.git"
   },
   "author": "aymeric beudaert",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "babel-eslint": "^10.0.1",
     "eslint": "^5.10.0",
@@ -51,6 +51,10 @@
     "hooks": {
       "pre-commit": "lint-staged"
     }
+  },
+  "bugs": {
+    "url" : "https://github.com/Insomniiak/KubePloy/issues",
+    "email" : "aymeric.beudaert@gmail.com"
   },
   "keywords": [
     "kubernetes",
