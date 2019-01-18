@@ -1,4 +1,7 @@
 # KubePloy
+
+[![Join the chat at https://gitter.im/KubePloy/community](https://badges.gitter.im/KubePloy/community.svg)](https://gitter.im/KubePloy/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 Npm tool to update your images on your deployments
 
 ```
