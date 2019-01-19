@@ -9,6 +9,7 @@ program
   .description(
     'Deploy your image updated to the deployment in your cluster and update it',
   )
+  .option('-n, --namespace <namespace>', 'Deploy on the namespace provided')
   .action(deploy);
 
 program
