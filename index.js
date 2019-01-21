@@ -21,7 +21,8 @@ program
   .action(updateImage);
 
 
-if (!process.argv.slice(2).length) {
+const args = process.argv.slice(2);
+if (!args.length || (args[0] !== 'deploy' && args[0] !== 'update-image')) {
   program.help();
 }
 

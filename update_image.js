@@ -9,7 +9,7 @@ const updateImage = (registry, image, path, cmd) => new Promise(
     (err) => {
       if (err) reject(err);
       if (cmd.deploy) {
-        deploy(cmd.deploy, registry, image);
+        deploy(cmd.deploy, registry, image, {});
       }
       resolve();
     });
