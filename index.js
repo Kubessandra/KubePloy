@@ -1,4 +1,4 @@
-#!/usr/local/bin/node
+#!/usr/bin/env node
 
 const program = require('commander');
 const deploy = require('./deploy');
