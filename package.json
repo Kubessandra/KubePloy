@@ -1,6 +1,6 @@
 {
   "name": "kubeploy",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Npm tool to update your images on your deployments",
   "main": "index.js",
   "scripts": {
