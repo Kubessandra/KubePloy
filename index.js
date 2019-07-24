@@ -3,6 +3,7 @@
 const program = require('commander');
 const deploy = require('./deploy');
 const updateImage = require('./update_image');
+const pjson = require('./package.json');
 
 program
   .command('deploy <deployment> <registry> <image>')
@@ -23,6 +24,7 @@ program
 
 const args = process.argv.slice(2);
 if (!args.length || (args[0] !== 'deploy' && args[0] !== 'update-image')) {
+  console.log(`Kubeploy version: ${pjson.version}`);
   program.help();
 }
 
