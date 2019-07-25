@@ -3,8 +3,8 @@ const deploy = require('./deploy');
 
 const getLatestDigest = (text) => {
   const reg = /latest: digest: (sha256.*) size:/g;
-  const [digest] = Array.from(text.matchAll(reg));
-  return digest[1];
+  const [, digest] = reg.exec(text);
+  return digest;
 };
 
 const updateImage = (registry, image, path, cmd) => new Promise(
