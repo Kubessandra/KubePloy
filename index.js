@@ -3,6 +3,7 @@
 const program = require('commander');
 const { deploy } = require('./deploy');
 const updateImage = require('./update_image');
+const cloudBuild = require('./cloudBuild');
 const pjson = require('./package.json');
 
 program
@@ -28,7 +29,7 @@ program
   )
   .option('-t, --tag <tag>', 'tag for the image')
   .option('-d, --deploy <deployment>', 'Deploy the image to the deployment after the update')
-  .action(updateImage);
+  .action(cloudBuild);
 
 
 const commandName = ['deploy', 'update-image', 'cloud'];
