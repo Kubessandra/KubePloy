@@ -1,4 +1,4 @@
-const { exec } = require('child_process');
+const { exec, execSync } = require('child_process');
 
 const deploy = (deployment, registry, image, cmd, hashFromBuild) => {
   const COMMAND_RETRIEVE_HASH = `docker images --digests ${registry}/${image} | head -n 2 | tail -n 1 | cut -f 18 -d ' '`;
@@ -15,5 +15,18 @@ const deploy = (deployment, registry, image, cmd, hashFromBuild) => {
   });
 };
 
+const deployWithTag = (deployment, registry, image, cmd, tag) => {
+  if (!tag) throw new Error('No tag specified with -t or --tags');
+  const COMMAND_TAG_DEPLOY = `kubectl set image deployment/${deployment} ${deployment}=${registry}/${image}:${tag}`;
+  console.log(COMMAND_TAG_DEPLOY);
+  execSync(
+    COMMAND_TAG_DEPLOY,
+    { stderr: 'inherit', stdio: 'inherit' },
+  );
+};
 
-module.exports = deploy;
+
+module.exports = {
+  deploy,
+  deployWithTag,
+};

@@ -1,5 +1,5 @@
 const { exec } = require('child_process');
-const deploy = require('./deploy');
+const { deploy } = require('./deploy');
 
 const getLatestDigest = (text) => {
   const reg = /latest: digest: (sha256.*) size:/g;
