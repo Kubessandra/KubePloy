@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 const program = require('commander');
-const deploy = require('./deploy');
+const { deploy } = require('./deploy');
 const updateImage = require('./update_image');
 const pjson = require('./package.json');
 
@@ -18,6 +18,15 @@ program
   .description(
     'Update and push your image to your registry',
   )
+  .option('-d, --deploy <deployment>', 'Deploy the image to the deployment after the update')
+  .action(updateImage);
+
+program
+  .command('cloud <registry> <image> <path>')
+  .description(
+    'Update and push your image to your registry using Cloud build from google cloud plateform',
+  )
+  .option('-t, --tag <tag>', 'tag for the image')
   .option('-d, --deploy <deployment>', 'Deploy the image to the deployment after the update')
   .action(updateImage);
 
