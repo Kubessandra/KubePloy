@@ -31,8 +31,9 @@ program
   .action(updateImage);
 
 
+const commandName = ['deploy', 'update-image', 'cloud'];
 const args = process.argv.slice(2);
-if (!args.length || (args[0] !== 'deploy' && args[0] !== 'update-image')) {
+if (!args.length || !commandName.includes(args[0])) {
   console.log(`Kubeploy version: ${pjson.version}`);
   program.help();
 }
