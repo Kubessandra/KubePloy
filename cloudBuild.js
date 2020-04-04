@@ -9,7 +9,9 @@ const cloudBuild = (registry, image, path, cmd) => {
       stderr: 'inherit',
     },
   );
-  deployWithTag(cmd.deploy, registry, image, cmd, cmd.tag);
+  if (cmd.deploy) {
+    deployWithTag(cmd.deploy, registry, image, cmd, cmd.tag);
+  }
 };
 
 module.exports = cloudBuild;
