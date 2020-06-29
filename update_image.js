@@ -1,5 +1,5 @@
 const { exec } = require('child_process');
-const { deploy } = require('./deploy');
+const { deploy, deployWithTag } = require('./deploy');
 
 const getLatestDigest = (text) => {
   const reg = /latest: digest: (sha256.*) size:/g;
@@ -10,13 +10,17 @@ const getLatestDigest = (text) => {
 const updateImage = (registry, image, path, cmd) => new Promise(
   (resolve, reject) => {
     const dockerProcess = exec(`docker build -t ${image} ${path} &&`
-      + `docker tag ${image} ${registry}/${image} &&`
-      + `docker push ${registry}/${image}`,
+      + `docker tag ${image} ${registry}/${image}:${cmd.tag || 'latest'} &&`
+      + `docker push ${registry}/${image}:${cmd.tag || 'latest'}`,
     (err, stdout) => {
       if (err) reject(err);
       if (cmd.deploy) {
         const hash = getLatestDigest(stdout);
-        deploy(cmd.deploy, registry, image, {}, hash);
+        if (cmd.tag) {
+          deployWithTag(cmd.deploy, registry, image, cmd, cmd.tag);
+        } else {
+          deploy(cmd.deploy, registry, image, {}, hash);
+        }
       }
       resolve();
     });

@@ -19,6 +19,7 @@ program
   .description(
     'Update and push your image to your registry',
   )
+  .option('-t, --tag <tag>', 'tag for the image')
   .option('-d, --deploy <deployment>', 'Deploy the image to the deployment after the update')
   .action(updateImage);
 
