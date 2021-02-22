@@ -9,7 +9,8 @@ const getLatestDigest = (text) => {
 
 const updateImage = (registry, image, path, cmd) => new Promise(
   (resolve, reject) => {
-    const dockerProcess = exec(`docker build -t ${image} ${path} &&`
+    const cacheFlag = cmd.cache ? '' : '--no-cache';
+    const dockerProcess = exec(`docker build -t ${image} ${path} ${cacheFlag} &&`
       + `docker tag ${image} ${registry}/${image}:${cmd.tag || 'latest'} &&`
       + `docker push ${registry}/${image}:${cmd.tag || 'latest'}`,
     (err, stdout) => {
