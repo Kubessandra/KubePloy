@@ -1,13 +1,13 @@
 {
   "name": "kubeploy",
-  "version": "1.4.1",
+  "version": "1.5.0",
   "description": "Npm tool to update your images on your deployments",
   "main": "index.js",
   "scripts": {
     "eslint": "eslint --max-warnings 0 --fix --ext .js ."
   },
   "bin": {
-    "kubeploy": "./index.js"
+    "kubeploy": "index.js"
   },
   "repository": {
     "type": "git",
