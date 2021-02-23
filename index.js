@@ -21,6 +21,7 @@ program
   )
   .option('-t, --tag <tag>', 'tag for the image')
   .option('-d, --deploy <deployment>', 'Deploy the image to the deployment after the update')
+  .option('--no-cache', 'Do not use docker cache when building the image')
   .action(updateImage);
 
 program
